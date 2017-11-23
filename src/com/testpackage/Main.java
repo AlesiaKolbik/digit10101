@@ -10,37 +10,37 @@ public class Main {
         int digit = inputDigit.nextInt();
         for (int i = 2; i < digit; i++) {
             for (int j = 2; j < digit; j++) {
-                int multiTwoNumbers=multiplication(i,j);
-                String multiTwoNambers=String.valueOf(multiTwoNumbers);
-                int maxDigit=maxDigit(i,j);
-                String number=addNullToString(maxDigit);
-                if(multiTwoNambers.equals(number)){
-                    System.out.println(i+"*"+j+"="+multiTwoNumbers);
+                int multiTwoNumbers= mulOfNumbers(i,j);
+                String mulTwoNum=String.valueOf(multiTwoNumbers);
+                int maxDigit= findMaxDigit(i,j);
+                String newDigitWhithZeros= addZerosToString(maxDigit);
+                if(mulTwoNum.equals(newDigitWhithZeros)){
+                    System.out.println(i+"*"+j+"="+mulTwoNum);
                 }
             }
         }
     }
-    public static int maxDigit(int number1, int number2) {
+    public static int findMaxDigit(int number1, int number2) {
         if (number1 > number2) {
             return number1;
         } else {
             return number2;
         }
     }
-    public static int multiplication(int number1, int number2) {
+    public static int mulOfNumbers(int number1, int number2) {
         int result=number1*number2;
         return  result;
     }
-    public static String addNullToString (int number){
+    public static String addZerosToString(int number){
         String createStringToNumber=String.valueOf(number);
         int length=createStringToNumber.length();
-        String rezult=new String();
+        String result=new String();
         for(int i=0;i<length-1;i++){
-            rezult+=createStringToNumber.charAt(i);
-            rezult+='0';
+            result+=createStringToNumber.charAt(i);
+            result+='0';
         }
-        rezult+=createStringToNumber.charAt(length-1);
-        return rezult;
+        result+=createStringToNumber.charAt(length-1);
+        return result;
     }
 
 }
